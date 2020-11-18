@@ -1,0 +1,35 @@
+.box{
+    width: 100%;
+    padding: 10px;
+    .row{
+        width: 100%;
+        margin: 0;
+        .card{
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 0;
+            .card-body{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                div{
+                    color: rgb(24, 140, 218);
+                    a:active, a:visited{
+                        color: rgb(39, 139, 206);
+                    }  
+                    display: flex;
+                    flex-direction: row;
+                    p{
+                        margin-right: 5px;
+                    }
+                }
+                a:active, a:visited{
+                    color: black;
+                }
+                .card-title{
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}

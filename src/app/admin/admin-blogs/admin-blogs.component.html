@@ -1,0 +1,42 @@
+<form>
+    <div class="form-group">
+        <input [(ngModel)]="blogTitle" name="blogTitle" type="text" class="form-control" placeholder="title here...">
+    </div>
+    <div class="form-group">
+        <textarea [(ngModel)]="blogText" name="blogText" class="form-control" placeholder="text here..."></textarea>
+    </div>
+    <div class="form-group">
+        <input [(ngModel)]="blogAuthor" name="blogAuthor" type="text" class="form-control" placeholder="author here...">
+    </div>
+    <button *ngIf="!editStatus" (click)="addAdminBlog()" type="button" class="btn btn-dark">ADD</button>
+    <button *ngIf="editStatus" (click)="saveEditAdminBlog()" type="button" class="btn btn-light">Save edit</button>
+</form>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Text</th>
+            <th scope="col">Date</th>
+            <th scope="col">Author</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let blog of adminBlogs; let i=index">
+            <td>{{ i+1 }}</td>
+            <td>{{ blog.title }}</td>
+            <td>{{ blog.text }}</td>
+            <td>{{ blog.date | date: 'MMM d, yyyy' }}</td>
+            <td>{{ blog.author }}</td>
+            <td>
+                <button (click)="editAdminBlog(blog)" class="btn btn-dark">edit</button>
+            </td>
+            <td>
+                <button (click)="deleteAdminBlog(blog)" class="btn btn-dark">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

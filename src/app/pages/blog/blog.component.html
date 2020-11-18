@@ -1,0 +1,17 @@
+<div class="box">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let blog of userBlogs">
+      <div class="card">
+        <img [src]="blog.image" class="card-img-top" alt="...">
+        <div class="card-body">
+          <div>
+            <p>{{ blog.date | date: 'MMM d, yyyy' | uppercase }}</p>
+            <a href="#">{{blog.author | uppercase }}</a>
+          </div>
+          <a href="#" class="card-title">{{ blog.title }}</a>
+          <p class="card-text">{{ blog.text }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
